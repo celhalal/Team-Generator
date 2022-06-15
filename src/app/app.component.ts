@@ -11,6 +11,8 @@ export class AppComponent {
   newMemberName = '';       // equal to an empty string
   members: string[] = [];   // store the list of names
   errorMessage = '';
+  numberOfTeams: number | '' = '';
+  teams:string[][] = [[]];
 
   // for each name, generate a new li using *ngFor
 
@@ -29,4 +31,30 @@ export class AppComponent {
     this.newMemberName = '';
   }
 
+  onTeamSizeInput(value: string){
+    this.numberOfTeams = Number(value);
+  }
+
+  generateTeams(){
+    if(!this.numberOfTeams || this.numberOfTeams <= 0){
+      return;
+    }
+
+    // copy original array to keep track of how many users left
+    const allMembers = [...this.members];
+
+    while(allMembers.length){
+      for (let i=0; i<this.numberOfTeams; i++){
+        const randomIndex = Math.floor(Math.random() * allMembers.length);
+        const member = allMembers.splice(randomIndex, 1)[0]; 
+        if(!member) break;
+        if(this.teams[i]){
+          this.teams[i].push(member);
+        } else {
+          this.teams[i] = [member];
+        }
+      }
+    }
+    console.log(this.teams);
+  }
 }
