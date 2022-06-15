@@ -5,6 +5,12 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  title = 'teamapp';
+  // store input for new member to store our state
+  newMemberName = '';       // equal to an empty string
+  members: string[] = [];   // store the list of names
+
+  
+  
 }
