@@ -6,10 +6,11 @@
     </ul>
     <div class="add-members-container">
       <input
-        #peopleInput
+        #addMemberInput
         type="text"
-        (input)="onInput(peopleInput.value)"
         placeholder="Name"
+        (input)="onInput(addMemberInput.value)"
+        [value]="newMemberName"
       />
       <button (click)="addMember()">Add</button>
     </div>

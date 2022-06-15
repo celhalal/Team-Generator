@@ -20,6 +20,7 @@ export class AppComponent {
   // inserts input of name into members array when 'Add' button is clicked
   addMember(){
     this.members.push(this.newMemberName);
+    this.newMemberName = '';
   }
 
 }
