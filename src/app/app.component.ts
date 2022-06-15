@@ -11,6 +11,15 @@ export class AppComponent {
   newMemberName = '';       // equal to an empty string
   members: string[] = [];   // store the list of names
 
-  
-  
+  onInput(member: string){
+    this.newMemberName = member;
+    console.log(this.newMemberName);
+  }
+
+  // inserts input of name into members array when 'Add' button is clicked
+  addMember(){
+    this.members.push(this.newMemberName);
+    console.log(this.members)
+  }
+
 }
