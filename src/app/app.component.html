@@ -6,12 +6,19 @@
       <li>Vincent Gatho</li>
     </ul>
     <div class="add-members-container">
-      <input type="text" placeholder="Name"/>
-      <button>Add</button>
+      <input
+        #peopleInput
+        type="text"
+        (input)="onInput(peopleInput.value)"
+        placeholder="Name"
+      />
+      <button (click)="addMember()">Add</button>
     </div>
     <div class="input-container">
-      <input type="text" placeholder="# of teams"/>
-      <button >Generate</button>
+      <input
+        type="text"
+        placeholder="# of teams"/>
+      <button>Generate</button>
     </div>
   </div>
 </div>
